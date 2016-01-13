@@ -18,8 +18,11 @@ function setChat() {
         var formData = new FormData($(this)[0]);
         var d = new Date();
         var ajax = new Ajax();
-        var chat_id = d.getFullYear() + '' + ajax.concatString((d.getMonth() + 1)) + '' + ajax.concatString(d.getDate()) + '' + ajax.concatString(d.getHours()) + '' + ajax.concatString(d.getMinutes()) + '' + ajax.concatString(d.getSeconds()) + '' + (Math.floor(Math.random() * (9999 - 1000) + 1000));
-        var chat_time = d.getFullYear() + '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) + ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) + ':' + ajax.concatString(d.getSeconds());
+        var chat_id = d.getFullYear() + '' + ajax.concatString((d.getMonth() + 1)) + '' + ajax.concatString(d.getDate()) +
+        '' + ajax.concatString(d.getHours()) + '' + ajax.concatString(d.getMinutes()) + '' + ajax.concatString(d.getSeconds()) +
+        '' + (Math.floor(Math.random() * (9999 - 1000) + 1000));
+        var chat_time = d.getFullYear() + '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) +
+        ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) + ':' + ajax.concatString(d.getSeconds());
         formData.append('chat_id', chat_id);
         formData.append('chat_time', chat_time);
         ajaxLive('POST', '/SimpleLiveChat/chat/setChat', formData, 'html', false, false, false, false, success, null, null, null);
@@ -49,7 +52,10 @@ function getChat() {
                 html += '<div class="direct-chat-msg right">';
                 html += '<div class="direct-chat-info clearfix">';
                 html += '<span class="direct-chat-name pull-right">' + v.username + '</span>';
-                html += '<span class="direct-chat-timestamp pull-left">' + d.getFullYear() + '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) + ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) + ':' + ajax.concatString(d.getSeconds()) + '</span>';
+                html += '<span class="direct-chat-timestamp pull-left">' + d.getFullYear() +
+                '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) +
+                ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) +
+                ':' + ajax.concatString(d.getSeconds()) + '</span>';
                 html += '</div>';
                 html += '<img src="/SimpleLiveChat/assets/dist/img/default.png" class="direct-chat-img" alt="Message User Image"/>';
                 html += '<div class="direct-chat-text">';
@@ -60,7 +66,10 @@ function getChat() {
                 html += '<div class="direct-chat-msg">';
                 html += '<div class="direct-chat-info clearfix">';
                 html += '<span class="direct-chat-name pull-left">' + v.username + '</span>';
-                html += '<span class="direct-chat-timestamp pull-right">' + d.getFullYear() + '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) + ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) + ':' + ajax.concatString(d.getSeconds()) + '</span>';
+                html += '<span class="direct-chat-timestamp pull-right">' + d.getFullYear() +
+                '/' + ajax.concatString((d.getMonth() + 1)) + '/' + ajax.concatString(d.getDate()) +
+                ' ' + ajax.concatString(d.getHours()) + ':' + ajax.concatString(d.getMinutes()) +
+                ':' + ajax.concatString(d.getSeconds()) + '</span>';
                 html += '</div>';
                 html += '<img src="/SimpleLiveChat/assets/dist/img/default.png" class="direct-chat-img" alt="Message User Image"/>';
                 html += '<div class="direct-chat-text">';
